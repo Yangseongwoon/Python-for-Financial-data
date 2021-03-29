@@ -1,0 +1,12 @@
+#pandas_datareader 설치
+pip install pandas_datareader
+import pandas_datareader as pdr
+TINGO_API_KEY = "3cdc35e5b60bff3edf0c648454dea683030a719a"
+df = pdr.get_data_tiingo('GOOG', api_key=TINGO_API_KEY)
+df.head()
+#seaborn [python 시각화 패키지] 
+import seaborn as sns
+sns.lineplot(x=df.index.levels[1], y="adjClose", data=df)
+
+
+#https://www.tiingo.com
